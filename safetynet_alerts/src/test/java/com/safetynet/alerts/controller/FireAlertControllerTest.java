@@ -1,7 +1,6 @@
 package com.safetynet.alerts.controller;
 
 import com.safetynet.alerts.model.FireAlert;
-import com.safetynet.alerts.service.CommunityEmailService;
 import com.safetynet.alerts.service.FireAlertService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

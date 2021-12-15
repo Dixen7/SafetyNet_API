@@ -2,10 +2,8 @@ package com.safetynet.alerts.controller;
 
 import com.safetynet.alerts.model.ChildAlert;
 import com.safetynet.alerts.service.ChildAlertService;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

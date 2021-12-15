@@ -1,6 +1,5 @@
 package com.safetynet.alerts.repository.Interface;
 
-
 import com.safetynet.alerts.model.Firestation;
 
 import java.util.List;

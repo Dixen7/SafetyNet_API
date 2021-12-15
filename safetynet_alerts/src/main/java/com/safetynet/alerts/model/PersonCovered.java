@@ -7,7 +7,6 @@ public class PersonCovered {
     private String address;
     private String phone;
 
-
     public PersonCovered() { }
 
     public PersonCovered(String firstName, String lastName, String address, String phone) {

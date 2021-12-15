@@ -33,7 +33,6 @@ public class ChildAlert {
         this.age = age;
     }
 
-    public List<String> getFamily() { return family; }
     public void setFamily(List<String> family) {
         this.family = family;
     }

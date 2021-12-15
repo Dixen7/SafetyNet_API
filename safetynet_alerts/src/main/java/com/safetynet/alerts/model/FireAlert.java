@@ -71,7 +71,6 @@ public class FireAlert {
         this.allergies = allergies;
     }
 
-    public List<String> getStationNumber() { return stationNumber;}
     public void setStationNumber(List<String> stationNumber) { this.stationNumber = stationNumber; }
 
     @Override
