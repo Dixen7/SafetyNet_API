@@ -59,14 +59,4 @@ public class ChildAlertControllerTest {
                 .andExpect(status().reason("Required String parameter 'address' is not present"));
     }
 
-    // Test the getChildByAddress method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getChildByAddressTestWithIncorrectParamValue() throws Exception {
-        this.mvc.perform(MockMvcRequestBuilders.get("/childAlert")
-                .param("address", "a"))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request 'a' doesn't match anything or is incorrect\"]"));
-    }
 }

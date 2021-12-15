@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 public class ChildAlertController {
 
-
     @Autowired
     ChildAlertService childAlertService;
 

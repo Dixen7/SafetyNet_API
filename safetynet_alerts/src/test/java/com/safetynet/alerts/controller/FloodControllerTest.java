@@ -61,14 +61,4 @@ public class FloodControllerTest {
                 .andExpect(status().reason("Required String parameter 'stations' is not present"));
     }
 
-    // Test the getHouseholdByFireStationAddress method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getHouseholdByFireStationAddressTestWithIncorrectParamValue() throws Exception {
-        this.mvc.perform(MockMvcRequestBuilders.get("/flood/stations")
-                .param("stations", "a"))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request 'a' doesn't match anything or is incorrect\"]"));
-    }
 }

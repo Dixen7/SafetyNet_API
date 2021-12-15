@@ -54,19 +54,4 @@ public class PhoneAlertControllerTest {
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().reason("Required String parameter 'firestation' is not present"));
     }
-
-    // Test the getPhoneNumbersByCoverageStation method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getPhoneNumbersByStationTestWithIncorrectParamValue() throws Exception {
-        List<String> stringList = new ArrayList<>();
-
-        when(phoneAlertService.getPhoneNumberByCoverage("a")).thenReturn(stringList);
-
-        this.mvc.perform(MockMvcRequestBuilders.get("/phoneAlert")
-                .param("firestation", "a"))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request 'a' doesn't match anything or is incorrect\"]"));
-    }
 }

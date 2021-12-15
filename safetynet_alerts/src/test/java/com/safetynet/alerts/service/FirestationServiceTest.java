@@ -31,6 +31,8 @@ public class FirestationServiceTest {
     @BeforeAll
     private static void setUp() {
         personRepository = mock(PersonRepository.class);
+        firestationRepository = mock(FirestationRepository.class);
+        medicalRecordRepository = mock(MedicalRecordRepository.class);
         MedicalRecordService medicalRecordService = new MedicalRecordService(medicalRecordRepository);
         firestationService = new FirestationService(personRepository, firestationRepository, medicalRecordService);
     }

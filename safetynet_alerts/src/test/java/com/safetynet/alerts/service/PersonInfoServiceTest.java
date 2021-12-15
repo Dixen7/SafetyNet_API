@@ -26,6 +26,7 @@ public class PersonInfoServiceTest {
     @BeforeAll
     private static void setup() {
         personRepository = mock(PersonRepository.class);
+        medicalRecordRepository = mock(MedicalRecordRepository.class);
         MedicalRecordService medicalRecordService = new MedicalRecordService(medicalRecordRepository);
         personInfoService = new PersonInfoService(personRepository, medicalRecordService);
     }
@@ -50,7 +51,7 @@ public class PersonInfoServiceTest {
         List<String> allergies = new ArrayList<>();
         medicalRecord.setAllergies(allergies);
         medicalRecord.setMedications(medications);
-        medicalRecord.setBirthdate("03/06/1984");
+        medicalRecord.setBirthdate("03/06/1985");
         medicalRecordList.add(medicalRecord);
 
         List<PersonInfo> personInfoList = new ArrayList<>();

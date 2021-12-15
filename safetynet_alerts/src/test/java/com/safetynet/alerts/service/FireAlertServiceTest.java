@@ -1,6 +1,5 @@
 package com.safetynet.alerts.service;
 
-import com.safetynet.alerts.model.DataContainer;
 import com.safetynet.alerts.model.FireAlert;
 import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.repository.FirestationRepository;
@@ -19,16 +18,15 @@ import static org.mockito.Mockito.when;
 public class FireAlertServiceTest {
 
     private static FireAlertService fireAlertService;
-
     private static PersonRepository personRepository;
-
     private static MedicalRecordRepository medicalRecordRepository;
-
     private static FirestationRepository firestationRepository;
 
     @BeforeAll
     private static void setup() {
         personRepository = mock(PersonRepository.class);
+        firestationRepository = mock(FirestationRepository.class);
+        medicalRecordRepository = mock(MedicalRecordRepository.class);
         MedicalRecordService medicalRecordService = new MedicalRecordService(medicalRecordRepository);
         FirestationService firestationService = new FirestationService(personRepository, firestationRepository, medicalRecordService);
         fireAlertService = new FireAlertService(personRepository, medicalRecordService, firestationService);

@@ -53,15 +53,4 @@ public class CommunityEmailControllerTest {
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().reason("Required String parameter 'city' is not present"));
     }
-
-    // Test the getEmailsByCity method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getEmailTestByCityWithIncorrectParamValue() throws Exception {
-        this.mvc.perform(MockMvcRequestBuilders.get("/communityEmail")
-                .param("city", "a"))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request 'a' doesn't match anything or is incorrect\"]"));
-    }
 }

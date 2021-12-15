@@ -12,8 +12,11 @@ import java.util.List;
 @RestController
 public class CommunityEmailController {
 
-    @Autowired
-    CommunityEmailService communityEmailService;
+    private final CommunityEmailService communityEmailService;
+
+    public CommunityEmailController(CommunityEmailService communityEmailService) {
+        this.communityEmailService = communityEmailService;
+    }
 
     @GetMapping("/communityEmail")
     public List<String> getEmailsByCity(@RequestParam String city) {

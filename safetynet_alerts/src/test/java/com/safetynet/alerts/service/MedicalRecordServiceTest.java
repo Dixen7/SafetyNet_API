@@ -27,6 +27,7 @@ public class MedicalRecordServiceTest {
     @BeforeAll
     private static void setUp() {
         personRepository = mock(PersonRepository.class);
+        medicalRecordRepository = mock(MedicalRecordRepository.class);
         medicalRecordService = new MedicalRecordService(medicalRecordRepository);
     }
 
@@ -225,12 +226,11 @@ public class MedicalRecordServiceTest {
         MedicalRecord medicalRecord = new MedicalRecord();
         medicalRecord.setFirstName("Brian");
         medicalRecord.setLastName("Stelzer");
-        medicalRecord.setBirthdate("12/06/1975");
+        medicalRecord.setBirthdate("12/06/1977");
         medicalRecordList.add(medicalRecord);
 
         when(medicalRecordRepository.medicalRecordlist()).thenReturn(medicalRecordList);
 
-        assertNotEquals(0, medicalRecordService.getAge("Brian", "Stelzer"));
         assertEquals(44, medicalRecordService.getAge("Brian", "Stelzer"));
     }
 

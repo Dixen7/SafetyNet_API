@@ -54,7 +54,4 @@ public class MedicalRecordControllerTest {
                 .andExpect(content().contentType("application/json"))
                 .andExpect(status().is2xxSuccessful());
     }
-
-
-
 }

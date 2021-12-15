@@ -12,9 +12,11 @@ import java.util.List;
 @RestController
 public class MedicalRecordController {
 
-    @Autowired
-    MedicalRecordService medicalRecordService;
+    private final MedicalRecordService medicalRecordService;
 
+    public MedicalRecordController(MedicalRecordService medicalRecordService) {
+        this.medicalRecordService = medicalRecordService;
+    }
 
     @PostMapping("/add")
     public List<MedicalRecord> addMedicalRecord(@RequestBody MedicalRecord medicalRecord) {

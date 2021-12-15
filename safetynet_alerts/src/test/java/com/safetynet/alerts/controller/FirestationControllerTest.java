@@ -91,20 +91,4 @@ public class FirestationControllerTest {
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().reason("Required String parameter 'stationNumber' is not present"));
     }
-
-    // Test the getPersonsCoverageStation method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getFireStationTestWithIncorrectParamValue() throws Exception {
-        List<StationCoverage> stationCoverageList = new ArrayList<>();
-
-        when(firestationService.getPersonsCoverageByStationNumber("a")).thenReturn(stationCoverageList);
-
-        this.mvc.perform(MockMvcRequestBuilders.get("/firestation")
-                .param("stationNumber", "a"))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request 'a' doesn't match anything or is incorrect\"]"));
-    }
-
 }

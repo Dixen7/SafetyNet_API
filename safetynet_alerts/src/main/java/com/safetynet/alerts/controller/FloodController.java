@@ -14,8 +14,11 @@ import java.util.List;
 @RestController()
 public class FloodController {
 
-    @Autowired
-    FloodService floodService;
+    private final FloodService floodService;
+
+    public FloodController(FloodService floodService) {
+        this.floodService = floodService;
+    }
 
     @GetMapping("/flood/stations")
     public List getHouseholdByFireStationAddress(@RequestParam String stations) {

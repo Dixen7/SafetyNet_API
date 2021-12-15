@@ -12,8 +12,11 @@ import java.util.List;
 @RestController
 public class PersonController {
 
-    @Autowired
-    PersonService personService;
+    private final PersonService personService;
+
+    public PersonController(PersonService personService) {
+        this.personService = personService;
+    }
 
     @PostMapping("/add")
     public List<Person> addPerson(@RequestBody Person person) {

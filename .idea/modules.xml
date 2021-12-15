@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SaftyNetAPI.iml" filepath="$PROJECT_DIR$/.idea/SaftyNetAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/safetynet_alerts/safetynet_alerts.iml" filepath="$PROJECT_DIR$/safetynet_alerts/safetynet_alerts.iml" />
+    </modules>
+  </component>
+</project>

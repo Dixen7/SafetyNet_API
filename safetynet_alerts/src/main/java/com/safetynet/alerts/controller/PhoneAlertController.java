@@ -13,8 +13,11 @@ import java.util.List;
 @RestController
 public class PhoneAlertController {
 
-    @Autowired
-    PhoneAlertService phoneAlertService;
+    private final PhoneAlertService phoneAlertService;
+
+    public PhoneAlertController(PhoneAlertService phoneAlertService) {
+        this.phoneAlertService = phoneAlertService;
+    }
 
     @GetMapping("/phoneAlert")
     public List<String> getPhoneNumbersByCoverageStation(@RequestParam String firestation) {

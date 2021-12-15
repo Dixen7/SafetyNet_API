@@ -14,8 +14,11 @@ import java.util.List;
 @RestController
 public class FirestationController {
 
-    @Autowired
-    FirestationService firestationService;
+    private final FirestationService firestationService;
+
+    public FirestationController(FirestationService firestationService) {
+        this.firestationService = firestationService;
+    }
 
     @PostMapping("/add")
     public List<Firestation> addFireStation(@RequestBody Firestation firestation) {

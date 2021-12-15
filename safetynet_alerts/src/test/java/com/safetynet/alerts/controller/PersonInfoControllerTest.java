@@ -1,12 +1,7 @@
 package com.safetynet.alerts.controller;
 
-import com.safetynet.alerts.model.DataContainer;
-import com.safetynet.alerts.model.MedicalRecord;
-import com.safetynet.alerts.model.Person;
 import com.safetynet.alerts.model.PersonInfo;
-import com.safetynet.alerts.service.MedicalRecordService;
 import com.safetynet.alerts.service.PersonInfoService;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,20 +58,4 @@ public class PersonInfoControllerTest {
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().reason("Required String parameter 'firstName' is not present"));
     }
-
-    // Test the getAPersonInformation method when the request parameter value is incorrect
-    // It must return a 200 status and a json array containing the error message
-    @Test
-    public void getPersonInformationTestWithIncorrectParamValue() throws Exception {
-        List<PersonInfo> personInfoList = new ArrayList<>();
-
-        when(personInfoService.getPersonInformation("", "")).thenReturn(personInfoList);
-
-        this.mvc.perform(MockMvcRequestBuilders.get("/personInfo")
-                .param("firstName", "").param("lastName", ""))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().json("[\"The request '' or '' doesn't match anything or is incorrect\"]"));
-    }
-
 }
