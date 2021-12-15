@@ -1,0 +1,38 @@
+
+_________________________________________________
+
+Livrables
+-----------
+Un lien vers le projet GitHub contenant la totalité du code.
+Le rapport de couverture de code généré par JaCoCo.
+Le rapport de test Surefire généré via les tests unitaires JUnit.
+Slides de « Synthèse client » (avec les besoins, les solutions techniques, la logique et le modèle du domaine métier).
+_________________________________________________
+
+Soutenance
+-----------
+Votre validateur jouera le rôle de George, qui effectuera une évaluation du code. Vous devrez expliquer comment vous avez procédé pour développer et tester la fonctionnalité de SafetyNet Alerts.
+
+La présentation devra être structurée comme suit :
+
+présentation et explication des livrables (15 min) :
+comment vous avez mis en œuvre les modifications nécessaires et pourquoi,
+quels tests vous avez effectués, pourquoi et comment vous les avez mis en œuvre. Expliquez vos choix,
+quelles contraintes ou difficultés vous avez rencontrées, et comment vous y avez répondu,
+ce que vous auriez pu changer ou faire différemment ;
+faites une courte visite guidée de vos livrables ;
+expliquez à l'aide d'un jeu de diapos :
+discussion (10 min) :
+le validateur vous posera des questions sur votre méthodologie et vos livrables ;
+soyez prêt à défendre votre travail, car le validateur mettra en cause vos décisions.
+Le validateur cessera de jouer le rôle du responsable 5 minutes avant la fin de la séance pour débriefer avec vous.
+_________________________________________________
+
+- Parler du data loader, expliquer comment les données sont chargées.
+- Datastore 
+- Decrire les endpoint (voir slides)
+- Parler du CRUD 
+- Parler des principes solid (expliqué la mise en oeuvre)
+- Diffcultés rencontré le : partern Factory
+- Ce que j'aurais fait autrement : Initialiser mes nouveaux objets ailleur que dans mon service qui est censé etre en responsabilité unique, qui m'aurai permis de faciliter l'ecriture de mes tests.
+
